@@ -168,7 +168,7 @@ html {
 	background-size: 30px 30px;
 	float: left;
 }
-.nav_left_log em{
+.nav_left_painter em{
 	color: #18CFA9;
 }
 
@@ -181,60 +181,6 @@ html {
 	margin-left: 261px;
 	margin-right: 1px;
 	margin-top: 64px;
-}
-.writeArticle{
-	width: 940px;
-	height: 300px;
-	border-bottom: 10px solid #E5E5E5;
-}
-.writeArticle h3{
-	margin-top: 10px;
-	margin-left: 24px;
-	color: #333;
-}
-.writeArticle textarea{
-	margin-top: 10px;
-	margin-left: 20px;
-	border: 3px solid #999;
-	border-radius: 6px;
-	padding: 20px;
-}
-.writeArticle_list{
-	width: 880px;
-	height: 30px;
-	margin-top: 10px;
-	padding:0 24px 0 24px;
-}
-.writeArticle_list span{
-	width: 24px;
-	height: 24px;
-	background-size: 24px 24px;
-	margin-right: 20px;
-}
-.writeArticle_list button{
-	width: 120px;
-	height: 30px;
-	background: #18CFA9;
-	border-radius: 20px;
-	border: none;
-	color: white;
-}
-.writeArticle_list .img{
-	background-image: url(../img/img.png);
-	background-size: 24px 22px;
-	background-position: 0px 1px;
-}
-.writeArticle_list .emoji{
-	background-image: url(../img/emoji.png);
-}
-.writeArticle_list .tag{
-	background-image: url(../img/tag.png);
-}
-.writeArticle_list .video{
-	background-image: url(../img/vedio.png);
-}
-.writeArticle_list .music{
-	background-image: url(../img/music.png);
 }
 /* 主体 */
 /* 底部 */
