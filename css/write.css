@@ -168,114 +168,23 @@ html {
 	background-size: 30px 30px;
 	float: left;
 }
-.nav_left_log em{
-	color: #18CFA9;
-}
 
 /* 左导航 */
 /* 主体 */
 .main {
 	width: 940px;
+	height: 800px;
 	background: #FFFFFF;
 	margin-left: 261px;
 	margin-right: 1px;
 	margin-top: 64px;
-}
-.writeArticle{
-	width: 940px;
-	height: 300px;
-	border-bottom: 10px solid #E5E5E5;
-}
-.writeArticle h3{
-	margin-top: 10px;
-	margin-left: 40px;
-	color: #333;
-}
-.writeArticle textarea{
-	margin-top: 10px;
-	margin-left: 36px;
-	border: 3px solid #999;
-	border-radius: 6px;
-	padding: 20px;
-}
-.writeArticle_list{
-	width: 860px;
-	height: 30px;
-	margin-top: 10px;
-	padding:0 40px 0 40px;
-}
-.writeArticle_list span{
-	width: 24px;
-	height: 24px;
-	background-size: 24px 24px;
-	margin-right: 20px;
-}
-.writeArticle_list button{
-	width: 120px;
-	height: 30px;
-	background: #18CFA9;
-	border-radius: 20px;
-	border: none;
-	color: white;
-}
-.writeArticle_list .img{
-	background-image: url(../img/img.png);
-	background-size: 24px 22px;
-	background-position: 0px 1px;
-}
-.writeArticle_list .emoji{
-	background-image: url(../img/emoji.png);
-}
-.writeArticle_list .tag{
-	background-image: url(../img/tag.png);
-}
-.writeArticle_list .video{
-	background-image: url(../img/vedio.png);
-}
-.writeArticle_list .music{
-	background-image: url(../img/music.png);
-}
-
-.card{
-	width: 900px;
-	height: 600px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 30px;
-	border: 4px solid #999 ;
-	padding-top: 10px;
-}
-
-.card_content{
-	width: 850px;
-	height: 570px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 10px;
-}
-.card_tag{
-	width: 800px;
-	height: 20px;
-	margin-top: 6px;
-}
-.card_tag li{
-	float: left;
-	margin-right: 12px;
-}
-.card_cover{
-	margin-top: 10px;
-}
-.card_cover img{
-	width: 800px;
-	height: 400px;
-	overflow: hidden;
 }
 /* 主体 */
 /* 底部 */
 #footer{
 	float: left;
 	width: 940px;
-	height:30px;
+	height: 120px;
 	padding-top: 20px;
 	margin-left: 261px;
 	background:#f2f2f5;
