@@ -43,18 +43,14 @@
 				</div>
 				<div class="main fl">
                     <form action="">
-                        <textarea name="title" cols="30" rows="1" placeholder="请输入标题（不要超过30字）"></textarea><br>
-                        <div class="write_list">
-                            <ul>
-                                <li><input type="image" src="" alt=""></li>
-                                <li><input type="file" name="" id=""></li>
-                                <li><input type="file"></li>
-                                <li><input type="file"></li>
-                            </ul><br>
-                        </div>
-                        <textarea name="body" cols="30" rows="10" placeholder="正文"></textarea><br>
-                        <input type="submit" value="发布">
-                        <button>取消</button>
+						<input type="text" id="title" placeholder="请输入标题（不要超过30字）"><br>
+						<textarea name="intro" id="intro" cols="30" rows="10" placeholder="简介（不要超过140字）"></textarea><br>
+						<textarea name="body" id="body" cols="30" rows="10" placeholder="正文"></textarea><br>
+						<div class="file_list"><span>图片<input type="file" name="" id=""></span> <br>
+							<span>视频<input type="file" name="" id=""></span><br>
+							<span>音乐<input type="file" name="" id=""></span><br></div>
+						<div class="btn"><input type="submit" id="submit" value="发布">
+							<button id="cancel">取消</button></div> 
                     </form>
 				</div>
 				<div id="footer">
