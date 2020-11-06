@@ -285,6 +285,9 @@ html {
 	font-size: 16px;
 	color: #666;
 }
+.card_artical ul{
+	margin-bottom: 10px;
+}
 .card_artical li{
 	text-indent: 2em;
 	font-weight: 300;
@@ -302,7 +305,6 @@ html {
 .card_pic .pic{
 	border: 1px solid #e5e5e5;
 	overflow: hidden;
-	align-content: center;
 }
 .card_pic img{
 	width: 230px;
