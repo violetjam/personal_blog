@@ -1,123 +1,10 @@
-* {
-	margin: 0;
-	padding: 0;
-}
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-ul,
-ol {
-	margin: 0;
-	padding: 0;
-}
-
-a {
-	text-decoration: none;
-	color: #000;
-}
-em{
-    font-style: normal;
-}
-li {
-	list-style: none;
-}
-
-input {
-	border: none;
-}
-
-img {
-	display: block
-}
-
-.fl {
-	float: left;
-}
-
-.fr {
-	float: right;
-}
-
-.clearFixed:after {
-	content: "";
-	display: block;
-	clear: both;
-}
 
 html {
 	background: #F1EEF2;
 }
 
-/* 导航栏 */
-#top {
-	background:white;
-	border-bottom: 1px solid #e5e5e5;
-	height: 64px;
-	width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-	z-index: 20;
-}
-.nav_top{
-    height: 64px;
-    width: 1200px;
-    margin: 0 auto;
-    line-height: 64px;
-}
-.nav_top .logo{
-    float: left;
-    height: 64px;
-    width: 150px;
-}
-.logo img{
-    float: left;
-    width: 44px;
-    margin: 8px  0 auto;
-}
-.logo h6{
-    float: left;
-    margin-left: 6px;
-    color:#666;
-    font-size: 18px;
-}
-.nav_top_list{
-    width: 400px;
-    height: 64px;
-    float: left;
-    margin-left:24%;
-}
-.nav_top_list li img{
-    float: left;
-    width: 34px;
-    margin: 14px 0 auto;
-}
-.nav_top_list li em{
-    color:#666;
-    float: left;
-    margin: auto 30px auto 10px;
-}
-.nav_top .followMe{
-    float: right;
-    margin: auto 0;
-}
-.followMe button{
-    width: 100px;
-    height: 34px;
-    border: none;
-    background: none;
-	border-radius: 50px;
-	background: #18CFA9;
-    color:white;
-}
 
-/* 导航栏 */
 /* 内容 */
 #contain {
 	width: 1200px;
@@ -213,6 +100,7 @@ html {
 	float: right;
 	margin-right: 60px;
 	margin-top: 30px;
+	margin-bottom: 30px;
 }
 .btn #submit{
 	width: 100px;
@@ -234,15 +122,39 @@ html {
     color:#18CFA9;
 }
 /* 主体 */
-/* 底部 */
-#footer{
-	float: left;
-	width: 940px;
-	height: 120px;
-	padding-top: 20px;
-	margin-left: 261px;
-	background:#f2f2f5;
-	text-align: center;
-	color: #999;
-	font-size: 16px;
+
+@media only screen and (max-width: 376px) {	
+	#title{
+		margin-top: 40px;
+		margin-left: 4% ;
+		width: 80%;
+	}
+	#intro{
+		margin-left: 4% ;
+		width: 80%;
+	}
+	#body{
+		margin-left: 4% ;
+		width: 80%;
+	}
+	.file_list{
+		margin-left: 50px;
+		margin-top: 30px;
+	}
+	.btn{
+		float: right;
+		margin-right: 4%;
+		margin-top: 30px;
+	}
+	.btn #submit{
+		width: 70px;
+		height: 24px;
+		border-radius: 24px;
+	}
+	.btn #cancel{
+		margin-left: 10px;
+		width: 70px;
+		height: 24px;
+		border-radius: 24px;
+	}
 }

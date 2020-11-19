@@ -1,133 +1,4 @@
-* {
-	margin: 0;
-	padding: 0;
-}
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-ul,
-ol {
-	margin: 0;
-	padding: 0;
-}
-
-a {
-	text-decoration: none;
-	color: #000;
-}
-em{
-    font-style: normal;
-}
-li {
-	list-style: none;
-}
-
-input {
-	border: none;
-}
-
-img {
-	display: block
-}
-
-.fl {
-	float: left;
-}
-
-.fr {
-	float: right;
-}
-
-.clearFixed:after {
-	content: "";
-	display: block;
-	clear: both;
-}
-
-@font-face {
-	font-family: 'webfont';
-	font-display: swap;
-	src: url('//at.alicdn.com/t/webfont_9oiw32s3q3i.eot'); /* IE9*/
-	src: url('//at.alicdn.com/t/webfont_9oiw32s3q3i.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-	url('//at.alicdn.com/t/webfont_9oiw32s3q3i.woff2') format('woff2'),
-	url('//at.alicdn.com/t/webfont_9oiw32s3q3i.woff') format('woff'), /* chrome、firefox */
-	url('//at.alicdn.com/t/webfont_9oiw32s3q3i.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-	url('//at.alicdn.com/t/webfont_9oiw32s3q3i.svg#思源黑体-粗') format('svg'); /* iOS 4.1- */
-  }
-
-html {
-	background: #ece7ee;
-}
-
-/* 导航栏 */
-#top {
-	background:white;
-	height: 64px;
-	width: 100%;
-    position: fixed;
-    top: 0;
-	left: 0;
-	border-bottom: 1px solid #e5e5e5;
-	z-index: 20;
-}
-.nav_top{
-    height: 64px;
-    width: 1200px;
-	margin: 0 auto;
-    line-height: 64px;
-}
-.nav_top .logo{
-    float: left;
-    height: 64px;
-    width: 150px;
-}
-.logo img{
-    float: left;
-    width: 44px;
-    margin: 8px  0 auto;
-}
-.logo h6{
-    float: left;
-    margin-left: 6px;
-    color:#666;
-    font-size: 18px;
-}
-.nav_top_list{
-    width: 400px;
-    height: 64px;
-    float: left;
-    margin-left:24%;
-}
-.nav_top_list li img{
-    float: left;
-    width: 34px;
-    margin: 14px 0 auto;
-}
-.nav_top_list li em{
-	font-weight: 300;
-    color:#666;
-    float: left;
-    margin: auto 30px auto 10px;
-}
-.nav_top .followMe{
-    float: right;
-    margin: auto 0;
-}
-.followMe button{
-    width: 100px;
-    height: 34px;
-    border: none;
-    background: none;
-	border-radius: 50px;
-	background: #18CFA9;
-    color:white;
-}
 
 /* 导航栏 */
 /* 内容 */
@@ -145,7 +16,7 @@ html {
 	padding-top: 30px;
 	position: fixed;
 	top: 65px;
-	z-index: 99;
+	z-index: 19;
 }
 
 .nav_left em{
@@ -358,14 +229,50 @@ html {
 	background-color: #e5e5e5;
 }
 /* 主体 */
-/* 底部 */
-#footer{
-	float: left;
-	width: 940px;
-	height:30px;
-	padding-top: 20px;
-	background:#f2f2f5;
-	text-align: center;
-	color: #999;
-	font-size: 16px;
+
+
+@media only screen and (max-width: 376px) {
+	.writeArticle{
+		width:100%;
+	}
+	.writeArticle textarea{
+		margin-left: 4%;
+		width: 80%;
+	}
+	.writeArticle_list{
+		width: 90%;
+		height: 30px;
+		margin-top: 10px;
+		padding:0 20px 0 20px;
+		margin-bottom: 30px;
+	}
+	.writeArticle_list span{
+		width: 24px;
+		height: 24px;
+		background-size: 24px 24px;
+		margin-right: 20px;
+	}
+	.writeArticle_list button{
+		width: 70px;
+		height: 20px;
+	}
+	.writeArticle_list .img{
+		background-image: url(../img/img.png);
+		background-size: 24px 22px;
+		background-position: 0px 1px;
+	}
+	.writeArticle_list .emoji{
+		background-image: url(../img/emoji.png);
+	}
+	.writeArticle_list .tag{
+		background-image: url(../img/tag.png);
+	}
+	.writeArticle_list .video{
+		background-image: url(../img/vedio.png);
+	}
+	.writeArticle_list .music{
+		background-image: url(../img/music.png);
+	}
+	
+	
 }

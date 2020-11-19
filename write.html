@@ -4,7 +4,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>写博文</title>
+		<link rel="stylesheet" href="css/public.css">
 		<link rel="stylesheet" type="text/css" href="css/write.css" />
+		<link rel="stylesheet" href="css/media.css">
 	</head>
 	<body>
 		<div id="box">
@@ -42,7 +44,7 @@
 					</ul>
 				</div>
 				<div class="main fl">
-                    <form action="">
+                    <form action="" id="write">
 						<input type="text" id="title" placeholder="请输入标题（不要超过30字）"><br>
 						<textarea name="intro" id="intro" cols="30" rows="10" placeholder="简介（不要超过140字）"></textarea><br>
 						<textarea name="body" id="body" cols="30" rows="10" placeholder="正文"></textarea><br>
@@ -51,10 +53,10 @@
 							<span>音乐<input type="file" name="" id=""></span><br></div>
 						<div class="btn"><input type="submit" id="submit" value="发布">
 							<button id="cancel">取消</button></div> 
-                    </form>
-				</div>
-				<div id="footer">
-					本站资源均来源于网上，若有侵权，请留言给站长处理。
+					</form>
+					<div id="footer">
+						本站资源均来源于网上，若有侵权，请留言给站长处理。
+					</div>
 				</div>
 			</div>
 			

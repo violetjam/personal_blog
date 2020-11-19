@@ -3,7 +3,7 @@
         "card_avatar_url" : "img/avatar.jpg",
         "username" : "VioletJam",
         "time":"2020.10.31 10:30",
-        "clickCount":"点击量:3",
+        "clickCount":"3",
         "artical_url":"artical.html",
         "card_title":"【审美与构成】设计部部长的分享",
         "card_artical":"对审美的理解和看图小技巧",
@@ -18,12 +18,12 @@
             "#日志"
         ]
 
-    }
+    },
     {
         "card_avatar_url" : "img/avatar.jpg",
         "username" : "VioletJam",
         "time":"2020.10.31 10:30",
-        "clickCount":"点击量:3",
+        "clickCount":"3",
         "artical_url":"artical.html",
         "card_title":"【审美与构成】设计部部长的分享",
         "card_artical":"对审美的理解和看图小技巧",
@@ -33,20 +33,20 @@
             "img/log/artical/pic3.jpg"
         ],
         "card_tag":[
-            "#审美",
+            "#艺术",
             "#设计",
             "#日志"
         ]
 
-    }
+    },
     {
         "card_avatar_url" : "img/avatar.jpg",
         "username" : "VioletJam",
         "time":"2020.10.31 10:30",
-        "clickCount":"点击量:3",
+        "clickCount":"4",
         "artical_url":"artical.html",
-        "card_title":"【审美与构成】设计部部长的分享",
-        "card_artical":"对审美的理解和看图小技巧",
+        "card_title":"【绘画技巧】形状画不好看怎么办？简单有效的小魔法",
+        "card_artical":"如果对形状对比比较迷惘，可以记住'小大长'的简单法则，小形状+大形状+长形状组合在一起看起来对比会比较丰富",
         "card_pic_url":[
             "img/log/artical/pic1.jpg",
             "img/log/artical/pic2.jpg",
@@ -54,7 +54,7 @@
         ],
         "card_tag":[
             "#审美",
-            "#设计",
+            "#绘画",
             "#日志"
         ]
 
