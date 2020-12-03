@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首页/个人日志</title>
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="css/signup.css" />
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="js/template-web.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script src="js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="box">
+      <!-- 导航栏 -->
+      <div id="top" class="clearFixed">
+        <div class="nav_top">
+          <div class="logo" name="link">
+            <a href="/index.html" title="index"
+              ><img src="img/logo.png" alt="logo" />
+              <h6>YT-BLOG</h6></a
+            >
+          </div>
+          <div class="nav_top_list" class="fl">
+            <ul>
+              <li name="link">
+                <a href="/log.html" title="log"
+                  ><img src="img/home_selected.png" alt="" /><em>首页</em></a
+                >
+              </li>
+              <li name="link">
+                <a href=""
+                  ><img src="img/find_unselected.png" alt="" /><em>发现</em></a
+                >
+              </li>
+              <li name="link">
+                <a href=""
+                  ><img src="img/user_unselected.png" alt="" /><em>我的</em></a
+                >
+              </li>
+            </ul>
+          </div>
+          <a href="login.html" id="login">登录  |  注册</a>
+        </div>
+      </div>
+      <div id="contain" class="clearFixed">
+        <!-- 主体 -->
+        <div class="main fl" id="main">
+            <form id="login_form" action="" method="post">
+                <div id="avatar"><img src="img/logo.png" alt=""></div>
+                <input type="text" class="input" placeholder="用户名">
+                <input type="password" class="input" placeholder="密码">
+                <input type="password" class="input" placeholder="确认密码">
+                <a href="signup.html"><input type="button" id="signup" value="注册"></a>
+                <a href="login.html"><input type="button" id="signin" value="登录"></a>
+            </form>
+            <script type="text/javascript">
+
+            </script>
+        </div>
+        <div id="footer">
+          本站资源均来源于网上，若有侵权，请留言给站长处理。
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
