@@ -20,13 +20,13 @@
     padding-top: 30px;
     padding-bottom: 50px;
     width: 550px;
-    height: 460px;
+    height: 400px;
     display: grid;
     justify-content: center;
     grid-row-gap: 16px;
     grid-column-gap: 30px;
     justify-items: center;
-    grid-template-rows: repeat(120px,5,50px);
+    grid-template-rows: repeat(120px,4,50px);
     grid-template-columns: 600px;
     border-radius: 50px;
 }
@@ -49,7 +49,7 @@
     background-color: #F1EEF2;
     padding: 0 20px;
 }
-#signup{
+#signin{
     margin-top: 20px;
     width: 290px;
     height: 40px;
@@ -57,16 +57,14 @@
     background-color: #18CFA9;
     color: white;
 }
-#signin{
+#signup{
     width: 290px;
     height: 40px;
     border-radius: 40px;
     border: 1px solid #18CFA9;
     background-color: #FFFFFF;
     color: #18CFA9;
-    
 }
 #errortip{
     color: red;
-    font-size: 16px;
 }

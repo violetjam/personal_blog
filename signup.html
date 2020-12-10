@@ -53,14 +53,75 @@
         <div class="main fl" id="main">
             <form id="login_form" action="" method="post">
                 <div id="avatar"><img src="img/logo.png" alt=""></div>
-                <input type="text" class="input" placeholder="用户名">
-                <input type="password" class="input" placeholder="密码">
-                <input type="password" class="input" placeholder="确认密码">
-                <a href="signup.html"><input type="button" id="signup" value="注册"></a>
-                <a href="login.html"><input type="button" id="signin" value="登录"></a>
+                <div id="errortip"></div>
+                <input type="text" class="input" id="username" placeholder="用户名">
+                <input type="password" class="input" id="password" type="password" placeholder="密码">
+                <input type="password" class="input" id="confirmPsw" type="password" placeholder="确认密码">
+                <input type="button" id="signup" value="注册" onclick="register();">
+                <a href="signin.html"><input type="button" id="signin" value="登录"></a>
             </form>
             <script type="text/javascript">
-
+              function register(){
+              if(check()){
+                var arr=[];
+                var errortip='';
+                if(localStorage.user){
+                  arr=eval(localStorage.user);
+                  for(e in arr){
+                    if($('#username').val()==arr[e].username){
+                      errortip='该账号已被注册';
+                      $('#errortip').text(errortip);
+                      clear();
+                      console.log("exists");
+                      return;
+                    }
+                  }
+                }
+                var user={
+                  'username':$('#username').val(),'password':$('#password').val()
+                };
+                arr.push(user);
+                localStorage.user=JSON.stringify(arr);
+                console.log("success");
+                clear();
+                window.location.href='index.html';
+              }
+            }
+            function clear(){
+              $('#username').val('');
+              $('#password').val('');
+              $('#confirmPsw').val('');
+            }
+            function check(){
+                var errortip='';
+                var username=$('#username').val();
+                var password=$('#password').val();
+                var confirmPsw=$('#confirmPsw').val();
+                if(username==''){
+                    errortip='用户名不能为空';
+                    $('#errortip').text(errortip);
+                    return false;
+                }
+                if(password==''){
+                    errortip='密码不能为空';
+                    $('#errortip').text(errortip);
+                    return false;
+                }
+                if(confirmPsw==''){
+                    errortip='请确认密码';
+                    $('#errortip').text(errortip);
+                    return false;
+                }
+                if(password!=confirmPsw){
+                    errortip='两次输入密码不一致';
+                    $('#errortip').text(errortip);
+                    $('#confirmPsw').val('');
+                    return false;
+                }
+                $('#errortip').text('');
+                console.log("check");
+                return true;
+            }
             </script>
         </div>
         <div id="footer">
