@@ -4,214 +4,216 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>首页/个人日志</title>
-		<link rel="stylesheet" type="text/css" href="css/public.css" />
 		<link rel="stylesheet" type="text/css" href="css/log.css" />
-		<link rel="stylesheet" href="css/media.css">
 		<script src="js/template-web.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.min.js"></script>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="js/logstate.js"></script>
 	</head>
 	<body>
 		<div id="box">
 			<div id="top" class="clearFixed">
 				<div class="nav_top">
-					<div class="logo" name="link"><a href="index.html"><img src="img/logo.png" alt="logo"><h6>YT-BLOG</h6></a></div>
+					<div class="logo"><a href="index.html"><img src="img/logo.png" alt="logo"><h6>YT-BLOG</h6></a></div>
 					<div class="nav_top_list" class="fl">
 						<ul>
-							<li name="link"><a href="log.html"><img src="img/home_selected.png" alt=""><em>首页</em></a></li>
-							<li name="link"><a href=""><img src="img/find_unselected.png" alt=""><em>发现</em></a></li>
-							<li name="link"><a href=""><img src="img/user_unselected.png" alt=""><em>我的</em></a></li>
+							<li><a href="log.html"><img src="img/home_selected.png" alt=""><em>首页</em></a></li>
+							<li><a href=""><img src="img/find_unselected.png" alt=""><em>发现</em></a></li>
+							<li><a href=""><img src="img/user_unselected.png" alt=""><em>我的</em></a></li>
 						</ul>    
 					</div>
-					<a href="login.html" id="login">登录  |  注册</a>
+					<div id="user">
+						
+					</div>
 				</div>
 			</div>
 			<div id="contain" class="clearFixed">
 				<div class="nav_left fl">
-					<ul>
-						<li class="nav_left_log" name="link"><a href="log.html"><svg t="1603955179907" class="icon" viewBox="0 0 1024 1024" version="1.1" 
+					<ul id="nav_left_list">
+						<li class="nav_left_log"><a href="#/log"><svg t="1603955179907" class="icon" viewBox="0 0 1024 1024" version="1.1" 
 							xmlns="http://www.w3.org/2000/svg" p-id="6441" width="200" height="200">
-							<path d="M746.666667 149.333333a64 64 0 0 1 64 64v661.333334l-298.666667-133.333334L213.333333 874.666667V213.333333a64 64 0 0 1 64-64h469.333334z m0 64H277.333333v562.666667l234.666667-104.746667 234.666667 104.746667V213.333333z m-106.666667 256v64H384v-64h256z m0-149.333333v64H384v-64h256z" 
+							<path id="svg_log" d="M746.666667 149.333333a64 64 0 0 1 64 64v661.333334l-298.666667-133.333334L213.333333 874.666667V213.333333a64 64 0 0 1 64-64h469.333334z m0 64H277.333333v562.666667l234.666667-104.746667 234.666667 104.746667V213.333333z m-106.666667 256v64H384v-64h256z m0-149.333333v64H384v-64h256z" 
 							p-id="6442" data-spm-anchor-id="a313x.7781069.0.i0" class="selected" fill="#18CFA9"></path></svg>
-							<em>个人日志</em></a></li>
-						<li class="nav_left_painter" name="link"><a href="painter.html"><svg t="1603955356597" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6662" width="200" height="200"><path d="M484.267 272.021l6.634 6.72c5.974 5.974 13.014 12.843 21.099 20.63l9.195-8.918c7.253-7.04 13.44-13.184 18.56-18.432a193.28 193.28 0 0 1 277.44 0c75.904 77.526 76.629 202.795 2.133 281.195L512 853.333 204.672 553.237c-74.475-78.421-73.77-203.69 2.133-281.216a193.28 193.28 0 0 1 277.44 0z m293.162 232.15c46.272-53.76 44.182-136.15-5.973-187.371a129.28 129.28 0 0 0-185.984 0l-15.125 15.104a1687.253 1687.253 0 0 1-4.395 4.31L512 388.18l-49.28-47.445-13.227-12.928-10.965-11.008a129.28 129.28 0 0 0-186.005 0c-51.456 52.565-52.31 137.963-2.198 191.573L512 763.883l261.675-255.531 3.754-4.181z"
-							 p-id="6663" data-spm-anchor-id="a313x.7781069.0.i4" class="selected" fill="#8a8a8a"></path></svg>
-							 <em>画师</em></a></li>
-						<li class="nav_left_tutorials" name="link"><a href=""><svg t="1603956062218" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6443" width="200" height="200"><path d="M658.069333 256a64 64 0 0 1 64 64l-0.021333 33.664 49.28-38.4A64 64 0 0 1 874.666667 365.781333v338.368a64 64 0 0 1-103.338667 50.474667l-49.28-38.4v26.496a64 64 0 0 1-64 64H213.333333a64 64 0 0 1-64-64V320a64 64 0 0 1 64-64h444.736z m0 64H213.333333v422.698667h444.736l-0.128-157.589334L810.666667 704.128V365.76l-152.704 118.933333 0.106666-164.693333zM384 397.312a42.666667 42.666667 0 0 1 22.741333 6.570667l133.866667 84.330666a42.666667 42.666667 0 0 1 0.32 72l-133.866667 86.016A42.666667 42.666667 0 0 1 341.333333 610.325333v-170.346666a42.666667 42.666667 0 0 1 42.666667-42.666667z m21.333333 81.322667v92.629333l72.789334-46.762667L405.333333 478.634667z" 
+							<em id="em_log">个人日志</em></a></li>
+						<li class="nav_left_painter"><a href="#/painter"><svg t="1603955356597" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6662" width="200" height="200"><path d="M484.267 272.021l6.634 6.72c5.974 5.974 13.014 12.843 21.099 20.63l9.195-8.918c7.253-7.04 13.44-13.184 18.56-18.432a193.28 193.28 0 0 1 277.44 0c75.904 77.526 76.629 202.795 2.133 281.195L512 853.333 204.672 553.237c-74.475-78.421-73.77-203.69 2.133-281.216a193.28 193.28 0 0 1 277.44 0z m293.162 232.15c46.272-53.76 44.182-136.15-5.973-187.371a129.28 129.28 0 0 0-185.984 0l-15.125 15.104a1687.253 1687.253 0 0 1-4.395 4.31L512 388.18l-49.28-47.445-13.227-12.928-10.965-11.008a129.28 129.28 0 0 0-186.005 0c-51.456 52.565-52.31 137.963-2.198 191.573L512 763.883l261.675-255.531 3.754-4.181z"
+							 p-id="6663" data-spm-anchor-id="a313x.7781069.0.i4" class="selected" id="svg_painter" fill="#8a8a8a"></path></svg>
+							 <em id="em_painter">画师</em></a></li>
+						<li class="nav_left_tutorials"><a href=""><svg t="1603956062218" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6443" width="200" height="200"><path d="M658.069333 256a64 64 0 0 1 64 64l-0.021333 33.664 49.28-38.4A64 64 0 0 1 874.666667 365.781333v338.368a64 64 0 0 1-103.338667 50.474667l-49.28-38.4v26.496a64 64 0 0 1-64 64H213.333333a64 64 0 0 1-64-64V320a64 64 0 0 1 64-64h444.736z m0 64H213.333333v422.698667h444.736l-0.128-157.589334L810.666667 704.128V365.76l-152.704 118.933333 0.106666-164.693333zM384 397.312a42.666667 42.666667 0 0 1 22.741333 6.570667l133.866667 84.330666a42.666667 42.666667 0 0 1 0.32 72l-133.866667 86.016A42.666667 42.666667 0 0 1 341.333333 610.325333v-170.346666a42.666667 42.666667 0 0 1 42.666667-42.666667z m21.333333 81.322667v92.629333l72.789334-46.762667L405.333333 478.634667z" 
 							p-id="6444" fill="#8a8a8a"></path></svg></path></svg>
 							<em>教程</em></a></li>
-						<li class="nav_left_material" name="link"><a href=""><svg t="1603955477369" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12143" width="200" height="200"><path d="M787.968 472.277333L505.173333 756.736a151.488 151.488 0 0 1-215.168 0c-59.52-59.882667-59.52-157.077333 0-216.96l287.018667-288.725333a91.349333 91.349333 0 0 1 129.770667 0 93.098667 93.098667 0 0 1 0 131.072L428.032 662.506667a31.701333 31.701333 0 0 1-45.098667 0 32.64 32.64 0 0 1 0-45.909334l250.133334-251.648-45.397334-45.12-250.133333 251.648a96.64 96.64 0 0 0 0 136.170667 95.701333 95.701333 0 0 0 135.893333 0l278.72-280.405333a157.098667 157.098667 0 0 0 0-221.312 155.349333 155.349333 0 0 0-220.522666 0L244.608 494.634667c-84.373333 84.864-84.373333 222.378667 0 307.221333a215.488 215.488 0 0 0 305.92 0l282.837333-284.458667-45.397333-45.12z" 
+						<li class="nav_left_material"><a href=""><svg t="1603955477369" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12143" width="200" height="200"><path d="M787.968 472.277333L505.173333 756.736a151.488 151.488 0 0 1-215.168 0c-59.52-59.882667-59.52-157.077333 0-216.96l287.018667-288.725333a91.349333 91.349333 0 0 1 129.770667 0 93.098667 93.098667 0 0 1 0 131.072L428.032 662.506667a31.701333 31.701333 0 0 1-45.098667 0 32.64 32.64 0 0 1 0-45.909334l250.133334-251.648-45.397334-45.12-250.133333 251.648a96.64 96.64 0 0 0 0 136.170667 95.701333 95.701333 0 0 0 135.893333 0l278.72-280.405333a157.098667 157.098667 0 0 0 0-221.312 155.349333 155.349333 0 0 0-220.522666 0L244.608 494.634667c-84.373333 84.864-84.373333 222.378667 0 307.221333a215.488 215.488 0 0 0 305.92 0l282.837333-284.458667-45.397333-45.12z" 
 							p-id="12144" data-spm-anchor-id="a313x.7781069.0.i7" class="selected" fill="#8a8a8a"></path></svg>
 							<em>素材</em></a></li>
-						<li><a href="write.html" name="link"><button type="write">写博文</button></a></li>
 					</ul>
 				</div>
+				<script>
+					checkCookies();
+				</script>
 				<div class="main fl" id="main">
-					<div class="writeArticle">
+					<div class="writeArticle" id="writeArticle">
 						<textarea  placeholder="发生了什么事儿？"></textarea>
 						<div class="writeArticle_list clearFixed">
 							<ul>
-								<li name="link"><a href=""><span class="img fl"></span></a></li>
-								<li name="link"><a href=""><span class="music fl"></span></a></li>
-								<li name="link"><a href=""><span class="video fl"></span></a></li>
-								<li name="link"><a href=""><span class="emoji fl"></span></a></li>
-								<li name="link"><a href=""><span class="tag fl"></span></a></li>		
+								<li><a href=""><span class="img fl"></span></a></li>
+								<li><a href=""><span class="music fl"></span></a></li>
+								<li><a href=""><span class="video fl"></span></a></li>
+								<li><a href=""><span class="emoji fl"></span></a></li>
+								<li><a href=""><span class="tag fl"></span></a></li>		
 							</ul>
 							<button class="fr"  type="button">发布</button>				
 						</div>
 					</div>
-					<!-- template模板 -->
-					<script type="text/html" id="template">
-						<div class="card clearFixed">
-						<div class="card_avatar"><img src= '{{card_avatar_url}}' alt="" /></div>
-						<div class="card_content">
-							<div class="user_info">
-							<h3>{{username}}</h3>
-							<span class="time fl">{{time}}</span>
-							<span class="clickCount fr">点击量{{clickCount}}</span>
+					<div id="main_list">
+						<!-- template模板 -->
+						<script type="text/html" id="template">
+							<div class="card clearFixed">
+							<div class="card_avatar"><img src= '{{card_avatar_url}}' alt="" /></div>
+							<div class="card_content">
+								<div class="user_info">
+								<h3>{{username}}</h3>
+								<span class="time fl">{{time}}</span>
+								<span class="clickCount fr">点击量{{clickCount}}</span>
+								</div>
+								<div class="card_title">
+								<a href='{{artical_url}}'><h1>{{card_title}}</h1></a>
+								</div>
+								<div class="card_artical">
+								<p>{{card_artical}}</p>
+								</div>
+								<div class="card_pic">
+								{{each card_pic_url}}
+										<div class="pic"><img src='{{$value}}' alt=""/></div>
+								{{/each}}
+								</div>
+
+								<div class="card_tag">
+								<ul>
+									<svg
+									t="1604137166956"
+									class="icon"
+									viewBox="0 0 1045 1024"
+									version="1.1"
+									xmlns="http://www.w3.org/2000/svg"
+									p-id="6902"
+									width="20"
+									height="20"
+									>
+									<path
+										d="M599.253333 134.72l220.842667 23.808a64 64 0 0 1 56.789333 56.768l23.786667 220.842667a64 64 0 0 1-18.368 52.096L510.933333 859.584a64 64 0 0 1-90.517333 0L175.808 614.954667a64 64 0 0 1 0-90.496L547.157333 153.109333a64 64 0 0 1 52.117334-18.389333z m-6.826666 63.637333L221.034667 569.706667 465.706667 814.336l371.328-371.349333-23.786667-220.821334-220.842667-23.808zM652.309333 
+																	277.333333a96 96 0 1 1 0 192 96 96 0 0 1 0-192z m0 64a32 32 0 1 0 0 64 32 32 0 0 0 0-64z"
+										p-id="6903"
+										fill="#18CFA9"
+									></path>
+									</svg>
+									{{each card_tag}}
+									<a href=""><li>{{$value}}</li></a>
+									{{/each}}	
+								</ul>
+								</div>
+								<div class="card_comment">
+								<div class="card_comment_li">
+									<svg
+									t="1604141060107"
+									class="icon"
+									viewBox="0 0 1024 1024"
+									version="1.1"
+									xmlns="http://www.w3.org/2000/svg"
+									p-id="5805"
+									width="22"
+									height="22"
+									>
+									<path
+										d="M873.6 416h-188.8c12.8-44.8 28.8-115.2 19.2-188.8-6.4-60.8-41.6-105.6-92.8-124.8-38.4-12.8-76.8-6.4-99.2 16-25.6 25.6-38.4 76.8-51.2 128-9.6 35.2-16 70.4-28.8 89.6-32 54.4-102.4 76.8-115.2 80H224c-19.2 0-32 12.8-32 32v448c0 19.2 12.8 32 32 32h547.2C896 928 960 537.6 960 515.2c0-57.6-44.8-99.2-86.4-99.2z m-102.4 444.8h-448H256V480H332.8c22.4-6.4 108.8-38.4 
+																	150.4-108.8 16-25.6 25.6-64 35.2-105.6 9.6-38.4 19.2-86.4 35.2-99.2 3.2-3.2 19.2-6.4 38.4 0 16 3.2 41.6 19.2 48 67.2 12.8 102.4-32 201.6-32 201.6-3.2 9.6-3.2 22.4 3.2 32 6.4 9.6 16 16 25.6 16h236.8c6.4 0 25.6 12.8 25.6 32-3.2 67.2-83.2 345.6-128 345.6zM96 416c-19.2 0-32 12.8-32 32v448c0 19.2 12.8 32 32 32s32-12.8 32-32V448c0-19.2-12.8-32-32-32z"
+										fill="#999999"
+										p-id="5806"
+									></path>
+									</svg>
+								</div>
+								<div class="card_comment_li">
+									<svg
+									t="1604141166872"
+									class="icon"
+									viewBox="0 0 1024 1024"
+									version="1.1"
+									xmlns="http://www.w3.org/2000/svg"
+									p-id="6094"
+									width="22"
+									height="22"
+									>
+									<path
+										d="M512 928c-8.192 0-16.384-3.136-22.624-9.376l-96-96c-12.512-12.512-12.512-32.736 0-45.248s32.736-12.512 45.248 0L512 850.752l73.376-73.376C591.36 771.36 599.488 768 608 768l224 0c17.664 0 32-14.336 32-32L864 224c0-17.632-14.336-32-32-32L192 192C174.368 192 160 206.368 160 224l0 512c0 17.664 14.368 32 32 32l96 0c17.664 0 32 14.304 32 32s-14.336 32-32 32L192 832c-52.928 0-96-43.072-96-96L96 224c0-52.928 43.072-96 96-96l640 0c52.928 0 96 43.072 96 96l0 512c0 52.928-43.072 96-96 96l-210.752 0-86.624 86.624C528.384 924.864 520.192 928 512 928z"
+										p-id="6095"
+										fill="#999999"
+									></path>
+									<path
+										d="M336 512C309.536 512 288 490.464 288 464S309.536 416 336 416s48 21.536 48 48S362.464 512 336 512z"
+										p-id="6096"
+										fill="#999999"
+									></path>
+									<path
+										d="M528 512c-26.464 0-48-21.536-48-48s21.536-48 48-48 48 21.536 48 48S554.464 512 528 512z"
+										p-id="6097"
+										fill="#999999"
+									></path>
+									<path
+										d="M720 512c-26.464 0-48-21.536-48-48s21.536-48 48-48 48 21.536 48 48S746.464 512 720 512z"
+										p-id="6098"
+										fill="#999999"
+									></path>
+									</svg>
+								</div>
+								<div class="card_comment_li">
+									<svg
+									t="1604141305411"
+									class="icon"
+									viewBox="0 0 1024 1024"
+									version="1.1"
+									xmlns="http://www.w3.org/2000/svg"
+									p-id="6338"
+									width="22"
+									height="22"
+									>
+									<path
+										d="M544 959.744c-3.936 0-7.936-0.704-11.712-2.208C520.032 952.704 512 940.896 512 927.744l0-286.976c-238.56 11.584-392.896 149.28-394.496 150.72-10.176 9.248-25.056 10.976-37.056 4.288-12-6.656-18.4-20.224-15.936-33.728 0.832-4.512 20.896-111.296 88.896-219.2 91.872-145.792 226.912-222.816 390.592-222.816 17.696 0 32 14.336 32 32s-14.304 32-32 32c-238.592 0-346.784 188.384-390.56 303.136C233.152 638.336 369.184 576 544 576c17.696 0 32 14.304 32 32l0 238.464 308.384-330.912L576 181.312 576 224c0 17.664-14.304 32-32 32-17.664 0-32-14.336-32-32L512 99.424c0-13.184 8.064-24.992 20.352-29.792 12.256-4.832 26.208-1.6 35.2 8.096l384 416.224c11.328 12.32 11.296 31.296-0.128 43.52l-384 412.096C561.248 956.192 552.704 959.744 544 959.744z"
+										p-id="6339"
+										fill="#999999"
+									></path>
+									</svg>
+								</div>
+								</div>
 							</div>
-							<div class="card_title">
-							<a href='{{artical_url}}'><h1>{{card_title}}</h1></a>
-							</div>
-							<div class="card_artical">
-							<p>{{card_artical}}</p>
-							</div>
-							<div class="card_pic">
-							{{each card_pic_url}}
-									<div class="pic"><img src='{{$value}}' alt=""/></div>
-							{{/each}}
 							</div>
 
-							<div class="card_tag">
-							<ul>
-								<svg
-								t="1604137166956"
-								class="icon"
-								viewBox="0 0 1045 1024"
-								version="1.1"
-								xmlns="http://www.w3.org/2000/svg"
-								p-id="6902"
-								width="20"
-								height="20"
-								>
-								<path
-									d="M599.253333 134.72l220.842667 23.808a64 64 0 0 1 56.789333 56.768l23.786667 220.842667a64 64 0 0 1-18.368 52.096L510.933333 859.584a64 64 0 0 1-90.517333 0L175.808 614.954667a64 64 0 0 1 0-90.496L547.157333 153.109333a64 64 0 0 1 52.117334-18.389333z m-6.826666 63.637333L221.034667 569.706667 465.706667 814.336l371.328-371.349333-23.786667-220.821334-220.842667-23.808zM652.309333 
-																277.333333a96 96 0 1 1 0 192 96 96 0 0 1 0-192z m0 64a32 32 0 1 0 0 64 32 32 0 0 0 0-64z"
-									p-id="6903"
-									fill="#18CFA9"
-								></path>
-								</svg>
-								{{each card_tag}}
-								<a href=""><li>{{$value}}</li></a>
-								{{/each}}	
-							</ul>
-							</div>
-							<div class="card_comment">
-							<div class="card_comment_li">
-								<svg
-								t="1604141060107"
-								class="icon"
-								viewBox="0 0 1024 1024"
-								version="1.1"
-								xmlns="http://www.w3.org/2000/svg"
-								p-id="5805"
-								width="22"
-								height="22"
-								>
-								<path
-									d="M873.6 416h-188.8c12.8-44.8 28.8-115.2 19.2-188.8-6.4-60.8-41.6-105.6-92.8-124.8-38.4-12.8-76.8-6.4-99.2 16-25.6 25.6-38.4 76.8-51.2 128-9.6 35.2-16 70.4-28.8 89.6-32 54.4-102.4 76.8-115.2 80H224c-19.2 0-32 12.8-32 32v448c0 19.2 12.8 32 32 32h547.2C896 928 960 537.6 960 515.2c0-57.6-44.8-99.2-86.4-99.2z m-102.4 444.8h-448H256V480H332.8c22.4-6.4 108.8-38.4 
-																150.4-108.8 16-25.6 25.6-64 35.2-105.6 9.6-38.4 19.2-86.4 35.2-99.2 3.2-3.2 19.2-6.4 38.4 0 16 3.2 41.6 19.2 48 67.2 12.8 102.4-32 201.6-32 201.6-3.2 9.6-3.2 22.4 3.2 32 6.4 9.6 16 16 25.6 16h236.8c6.4 0 25.6 12.8 25.6 32-3.2 67.2-83.2 345.6-128 345.6zM96 416c-19.2 0-32 12.8-32 32v448c0 19.2 12.8 32 32 32s32-12.8 32-32V448c0-19.2-12.8-32-32-32z"
-									fill="#999999"
-									p-id="5806"
-								></path>
-								</svg>
-							</div>
-							<div class="card_comment_li">
-								<svg
-								t="1604141166872"
-								class="icon"
-								viewBox="0 0 1024 1024"
-								version="1.1"
-								xmlns="http://www.w3.org/2000/svg"
-								p-id="6094"
-								width="22"
-								height="22"
-								>
-								<path
-									d="M512 928c-8.192 0-16.384-3.136-22.624-9.376l-96-96c-12.512-12.512-12.512-32.736 0-45.248s32.736-12.512 45.248 0L512 850.752l73.376-73.376C591.36 771.36 599.488 768 608 768l224 0c17.664 0 32-14.336 32-32L864 224c0-17.632-14.336-32-32-32L192 192C174.368 192 160 206.368 160 224l0 512c0 17.664 14.368 32 32 32l96 0c17.664 0 32 14.304 32 32s-14.336 32-32 32L192 832c-52.928 0-96-43.072-96-96L96 224c0-52.928 43.072-96 96-96l640 0c52.928 0 96 43.072 96 96l0 512c0 52.928-43.072 96-96 96l-210.752 0-86.624 86.624C528.384 924.864 520.192 928 512 928z"
-									p-id="6095"
-									fill="#999999"
-								></path>
-								<path
-									d="M336 512C309.536 512 288 490.464 288 464S309.536 416 336 416s48 21.536 48 48S362.464 512 336 512z"
-									p-id="6096"
-									fill="#999999"
-								></path>
-								<path
-									d="M528 512c-26.464 0-48-21.536-48-48s21.536-48 48-48 48 21.536 48 48S554.464 512 528 512z"
-									p-id="6097"
-									fill="#999999"
-								></path>
-								<path
-									d="M720 512c-26.464 0-48-21.536-48-48s21.536-48 48-48 48 21.536 48 48S746.464 512 720 512z"
-									p-id="6098"
-									fill="#999999"
-								></path>
-								</svg>
-							</div>
-							<div class="card_comment_li">
-								<svg
-								t="1604141305411"
-								class="icon"
-								viewBox="0 0 1024 1024"
-								version="1.1"
-								xmlns="http://www.w3.org/2000/svg"
-								p-id="6338"
-								width="22"
-								height="22"
-								>
-								<path
-									d="M544 959.744c-3.936 0-7.936-0.704-11.712-2.208C520.032 952.704 512 940.896 512 927.744l0-286.976c-238.56 11.584-392.896 149.28-394.496 150.72-10.176 9.248-25.056 10.976-37.056 4.288-12-6.656-18.4-20.224-15.936-33.728 0.832-4.512 20.896-111.296 88.896-219.2 91.872-145.792 226.912-222.816 390.592-222.816 17.696 0 32 14.336 32 32s-14.304 32-32 32c-238.592 0-346.784 188.384-390.56 303.136C233.152 638.336 369.184 576 544 576c17.696 0 32 14.304 32 32l0 238.464 308.384-330.912L576 181.312 576 224c0 17.664-14.304 32-32 32-17.664 0-32-14.336-32-32L512 99.424c0-13.184 8.064-24.992 20.352-29.792 12.256-4.832 26.208-1.6 35.2 8.096l384 416.224c11.328 12.32 11.296 31.296-0.128 43.52l-384 412.096C561.248 956.192 552.704 959.744 544 959.744z"
-									p-id="6339"
-									fill="#999999"
-								></path>
-								</svg>
-							</div>
-							</div>
-						</div>
-						</div>
-
-						<div class="divide"></div>
-					</script>
-					<!-- ajax获取json数据并遍历 -->
-					<script >
-					$(function(){
-						$.get("log.json",function(result){
-							$.each(result,function(index,obj){
-								var html=template("template",obj);
-								$("#main").append(html);
+							<div class="divide"></div>
+						</script>
+						<!-- ajax获取json数据并遍历 -->
+						<!-- <script >
+							$(function(){
+								var url=window.location.hash;
+								if(url==""){
+									console.log("ajax");
+									$.get("data/log.json",function(result){
+									$.each(result,function(index,obj){
+										var html=template("template",obj);
+										$("#main").append(html);
+										$("#em_log").css("color","#18CFA9");
+										$("#em_painter").css("color","#8a8a8a");
+										$("#svg_log").css("fill","#18CFA9");
+										$("#svg_painter").css("fill","#8a8a8a");
+									});
+								});
+								}
+								
 							});
-            			});
-					});
-					</script>
-				
+						</script> -->
+						<div id="main_template_list"></div>
+					</div>
 			</div>
 			<div id="footer">
 					本站资源均来源于网上，若有侵权，请留言给站长处理。
 			</div>
 			</div>
 		</div>
-		<!-- 路由 -->
-		<script>
-			;(function(){
-						var linkBox = document.getElementsByName('link');
-						linkBox.addEventListener('click', function(e){
-						 e.preventDefault();
-						 var elm = e.target;
-						 var uri = elm.href;
-						 var tlt = elm.title;
-						 history.pushState({path:uri,title:tlt}, null, uri);
-				})
-			})()
-			</script>
+		<script src="js/router.js"></script>
 	</body>
 </html>

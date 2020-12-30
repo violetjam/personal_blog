@@ -5,9 +5,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>首页/个人日志</title>
-		<link rel="stylesheet" type="text/css" href="css/public.css" />
 		<link rel="stylesheet" type="text/css" href="css/artical.css" />
-		<link rel="stylesheet" href="css/media.css">
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="js/logstate.js"></script>
 	</head>
 	<body>
 		<div id="box">
@@ -21,7 +21,11 @@
 							<li><a href=""><img src="img/user_unselected.png" alt=""><em>我的</em></a></li>
 						</ul>    
 					</div>
-					<a href="login.html" id="login">登录  |  注册</a>
+					<div id="user">
+						<script>
+							checkCookies();
+						</script>
+					</div>
 				</div>
 			</div>
 			<div id="contain" class="clearFixed">
@@ -54,36 +58,17 @@
 								<span class="clickCount fr">点击量:3</span>
 							</div>
 							<div class="card_title">
-								<a href=""><h1>【审美与构成】设计部部长的分享</h1></a>
+								<a href=""><h1>【审美与构成】平面构成</h1></a>
                             </div>
 							<div class="card_artical">
-                                <div class="intro">
-                                    <h4>简介</h4>
-                                    <p>对审美的理解和看图小技巧</p>
-                                </div>
 								<div class="artical">
                                     <h4>正文</h4>
-                                    <h5>审美是否存在高低之分？</h5>
-                                    <p>审美判断应该约束在具有共性的事物范畴中</p>
-                                    <h5>图像的审美：两个基本要求</h5>
-                                    <ul>
-										<li>可信</li>
-										<li>美</li>
-									</ul>
-                                    <h5>审美认知：美和什么相关?</h5>
-                                    <p>美和物体究竟是什么关系不大</p>
-                                    <h5>审美趣味与抽象对比</h5>
-                                    <p>具象描述内容抽象<br>       关注形状和色彩的特征</p>
-                                    <h5>抽象对比关系的概念</h5>
-                                    <ul>
-                                        <li>以成组的反义词出现</li>
-                                        <li>大-小</li>
-                                        <li>多-少 </li>
-                                        <li>疏-密</li>
-                                        <li>鲜艳-灰暗</li>
-                                        <li>平滑-曲折</li>
-                                        <li>规则-不规则</li>
-                                    </ul>
+                                    <p class="">
+	新生事物总是蕴藏强大的生命力的，但传统的东西也有它存在的价值。
+	人们的认识和观念也经历几波几折，从基础图案课程在课题上悄然隐退，到重新回到课堂，又经历不断改革调整，逐渐打破设计基础课程的传统的模式，一改以往较单一封闭为现在多元而开放的局面。在基础图案课程与平面构成并存的基础上，结合各方面实际，许多院校都开设了由图案课程延伸开来的如：黑白图案、装饰图案、装饰画、图形创意等等系列课程。
+	实践结果证明，平面构成和图案（这里的图案涵盖了上面所述的非平面构成的系列课程）各具优势，它们具共性之处又相互区别。因各自优势的特点而不能相互取代，因而也就有了共存的基础。从教学结果的终端，受教育者——学生来看，经历构成和图案等系列课程的学习也是非常有必要的。通过学习，可获得不同的审美体验和情感体验，训练多种思维方法，拓展创作视野和创作手法，更好的服务社会。
+	平面构成的形式美感通常要通过点、线、面的不同排列置放形式来实现,不同的形状、不同的排列,会带来不同的视觉感受。手工制作的布局和结构通常从平面构成开始，比如编织图案的成形，一般从现实的实物通过简化变形，再通过平面构成的方式把图形进行排列，对画面进行归纳，寻找规律，再通过制作技法进行制作成形。手工制作有很多不同的种类，但其基础离不开构成,现代陶艺和剪纸中很多优秀的作品都是通过构成的方式去实现的,通过构成把物体之美从抽象的图案中表现出来
+									</p>
                                 </div>
 							</div>
 							<div class="card_pic">

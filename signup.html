@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>首页/个人日志</title>
-    <link rel="stylesheet" type="text/css" href="css/public.css" />
-    <link rel="stylesheet" href="css/media.css" />
+    <title>注册</title>
     <link rel="stylesheet" href="css/signup.css" />
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script
@@ -45,7 +43,6 @@
               </li>
             </ul>
           </div>
-          <a href="login.html" id="login">登录  |  注册</a>
         </div>
       </div>
       <div id="contain" class="clearFixed">
@@ -84,8 +81,16 @@
                 localStorage.user=JSON.stringify(arr);
                 console.log("success");
                 clear();
+                setCookie("username",arr[e].username, 7);
                 window.location.href='index.html';
               }
+            }
+            function setCookie(cname, cvalue, exdays) {
+              console.log("set");
+              var d = new Date();
+              d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+              var expires = "expires=" + d.toGMTString();
+              document.cookie = cname + "=" + cvalue + ";" + expires;
             }
             function clear(){
               $('#username').val('');

@@ -1,0 +1,83 @@
+@import 'css/public.scss';
+#content h1{
+    float: left;
+    width: 1200px;
+    margin: 170px auto 0;
+    font-size: 46px;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+}
+.remark{
+    float: left;
+    width: 1200px;
+    height: auto;
+    margin: 60px auto 40px;
+}
+.remark #theme{
+    color: white;
+    float: left;
+    margin-left: 20%;
+}
+.remark #author{
+    color: white;
+    float: right;
+    margin-right: 20%;
+}
+.remark .share{
+    float: left;
+    margin-left: 16%;
+}
+.remark .share li{
+    float: left;
+    border-radius: 100%;
+    margin-right: 20px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+}
+.index_content_nav{
+    float: left;
+    margin-top: 94px;
+}
+.index_content_nav a{
+    width: 298px;
+    height: 210px;
+    float: left;
+    margin-right: 2px;
+    background-color: rgba(255, 255, 255, .4);
+}
+.index_content_nav li{
+    width:fit-content;
+    margin-top: 40px;
+    padding-left: 100px;
+}
+.index_content_nav li img{
+    width: 100px;
+}
+.index_content_nav span{
+    color: white;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 36px;
+}
+.index_content_nav .log{
+    margin-left: 20px;
+}
+.index_content_nav ul :first-child{
+    margin-left: 1px;
+}
+.index_content_nav ul :last-child{
+    margin-right: 0px;
+}
+.footer{
+    width: 1200px;
+    height: 50px;
+    margin: 20px auto 0;
+}
+.footer p{
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}

@@ -1,0 +1,22 @@
+@import 'css/public.scss';
+@import 'css/media.scss';
+@import 'css/sign.scss';
+#login_form{
+    grid-template-rows: repeat(120px,4,50px);
+}
+#signin{
+    margin-top: 20px;
+    width: 290px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #18CFA9;
+    color: white;
+}
+#signup{
+    width: 290px;
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid #18CFA9;
+    background-color: #FFFFFF;
+    color: #18CFA9;
+}

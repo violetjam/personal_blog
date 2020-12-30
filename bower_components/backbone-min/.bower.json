@@ -1,0 +1,15 @@
+{
+  "name": "backbone-min",
+  "_cacheHeaders": {
+    "ETag": "\"5eb03d72-4c01\"",
+    "Last-Modified": "Mon, 04 May 2020 16:06:10 GMT",
+    "Content-Length": "6426",
+    "Content-Type": "application/javascript; charset=utf-8"
+  },
+  "_release": "e-tag:5eb03d72-",
+  "main": "index.js",
+  "_source": "http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js",
+  "_target": "*",
+  "_originalSource": "http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js",
+  "_direct": true
+}
