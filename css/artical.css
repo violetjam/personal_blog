@@ -403,6 +403,9 @@ html {
     height: 24px; } }
 
 @media only screen and (max-width: 376px) {
+  #user{
+    display: none;
+  }
   .nav_top {
     width: 100%;
     opacity: 100%; }
@@ -539,6 +542,7 @@ html {
   /* 主体 */
   /* 底部 */
   #footer {
+    margin-left: 0;
     width: 100%;
     font-size: 14px;
     padding-top: 10px;

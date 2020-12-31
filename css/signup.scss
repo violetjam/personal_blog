@@ -4,6 +4,9 @@
 #login_form{
     grid-template-rows: repeat(120px,5,50px);
 }
+#login_form {
+    height: 440px;
+}
 #signup{
     margin-top: 20px;
     width: 290px;

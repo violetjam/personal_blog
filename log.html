@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/log.css" />
 		<script src="js/template-web.js" type="text/javascript" charset="utf-8"></script>
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="js/zoomify.min.js"></script>
 		<script src="js/logstate.js"></script>
 	</head>
 	<body>
@@ -22,7 +23,6 @@
 						</ul>    
 					</div>
 					<div id="user">
-						
 					</div>
 				</div>
 			</div>
@@ -84,7 +84,6 @@
 										<div class="pic"><img src='{{$value}}' alt=""/></div>
 								{{/each}}
 								</div>
-
 								<div class="card_tag">
 								<ul>
 									<svg
@@ -186,26 +185,6 @@
 
 							<div class="divide"></div>
 						</script>
-						<!-- ajax获取json数据并遍历 -->
-						<!-- <script >
-							$(function(){
-								var url=window.location.hash;
-								if(url==""){
-									console.log("ajax");
-									$.get("data/log.json",function(result){
-									$.each(result,function(index,obj){
-										var html=template("template",obj);
-										$("#main").append(html);
-										$("#em_log").css("color","#18CFA9");
-										$("#em_painter").css("color","#8a8a8a");
-										$("#svg_log").css("fill","#18CFA9");
-										$("#svg_painter").css("fill","#8a8a8a");
-									});
-								});
-								}
-								
-							});
-						</script> -->
 						<div id="main_template_list"></div>
 					</div>
 			</div>

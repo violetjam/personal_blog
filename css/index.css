@@ -120,7 +120,31 @@ body {
   width: 1200px;
   height: auto;
   margin: 64px auto 0px; }
+.share{
+    line-height: 20px;
+    margin: auto;
+    width: 138px;
+    height: 22px;
+}
 
+.share a{
+    float: left;
+    background:#ffffff;
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+    margin-right: 14px;
+    text-align: center;
+    line-height: 24px;
+}
+.share li{
+    font-family: 'iconfont';
+    color: #829b7f;
+    font-size: 22px;
+}
+.share .last{
+    margin-right: 0;
+}
 /* 底部 */
 #footer {
   float: left;

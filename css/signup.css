@@ -297,7 +297,7 @@ body {
   padding-top: 30px;
   padding-bottom: 50px;
   width: 550px;
-  height: 400px;
+  height: 440px;
   display: grid;
   justify-content: center;
   grid-row-gap: 16px;
@@ -346,4 +346,5 @@ body {
   border-radius: 40px;
   border: 1px solid #18CFA9;
   background-color: #FFFFFF;
-  color: #18CFA9; }
+  color: #18CFA9; 
+  margin-bottom: 20px;}

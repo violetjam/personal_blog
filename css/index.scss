@@ -71,6 +71,32 @@
 .index_content_nav ul :last-child{
     margin-right: 0px;
 }
+.share{
+    line-height: 20px;
+    margin: auto;
+    margin-top: 140px;
+    width: 138px;
+    height: 22px;
+}
+
+.share a{
+    float: left;
+    background:#4F6357;
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+    margin-right: 14px;
+    text-align: center;
+    line-height: 24px;
+}
+.share li{
+    font-family: 'iconfont';
+    color: #ffffff;
+    font-size: 18px;
+}
+.share .last{
+    margin-right: 0;
+}
 .footer{
     width: 1200px;
     height: 50px;
