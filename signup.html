@@ -63,7 +63,7 @@
                 var errortip='';
                 if(localStorage.user){
                   arr=eval(localStorage.user);
-                  for(e in arr){
+                  for(var e in arr){
                     if($('#username').val()==arr[e].username){
                       errortip='该账号已被注册';
                       $('#errortip').text(errortip);
@@ -80,8 +80,9 @@
                 localStorage.user=JSON.stringify(arr);
                 console.log("success");
                 clear();
-                setCookie("username",arr[e].username, 7);
+                setCookie("username",user.username, 7);
                 window.location.href='index.html';
+                return;
               }
             }
             function setCookie(cname, cvalue, exdays) {
