@@ -49,8 +49,7 @@ function setCookie(cname, cvalue, exdays) {
       var avatar=document.createElement("div");
       var img=document.createElement("img");
       var option=document.createElement("div");
-      
-      
+      var url=window.location.pathname;
         var nav=document.getElementById("nav_left_list");
         var write=document.createElement("li");
         var a=document.createElement("a");
@@ -63,7 +62,7 @@ function setCookie(cname, cvalue, exdays) {
         a.appendChild(btn);
         write.appendChild(a);
         nav.appendChild(write);
-      
+      }
       option.setAttribute("id","option");
       option.setAttribute("onclick","exit();");
       option.innerHTML="登出";

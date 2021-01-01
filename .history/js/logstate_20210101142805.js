@@ -49,7 +49,7 @@ function setCookie(cname, cvalue, exdays) {
       var avatar=document.createElement("div");
       var img=document.createElement("img");
       var option=document.createElement("div");
-      
+      var url=window.location.pathname;
       
         var nav=document.getElementById("nav_left_list");
         var write=document.createElement("li");

@@ -81,7 +81,7 @@
                         clear();
                         k = 0;
                         setCookie("username",arr[e].username, 7);
-                        window.location.href = "log.html";
+                        window.location.href = "index.html";
                         return;
                       } else {
                         errortip = "密码错误";
@@ -102,10 +102,6 @@
                   clear();
                   return;
                 }
-                errortip = "您尚未注册";
-                console.log("username doesnt exists");
-                $("#errortip").text(errortip);
-                clear();
               }
             }
             function setCookie(cname, cvalue, exdays) {
