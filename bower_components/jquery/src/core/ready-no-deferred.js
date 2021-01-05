@@ -1,97 +1,90 @@
-define( [
-	"../core",
-	"../var/document",
-	"../var/isFunction"
-], function( jQuery, document, isFunction ) {
+define([
+  '../core',
+  '../var/document',
+  '../var/isFunction'
+], function (jQuery, document, isFunction) {
+  'use strict'
 
-"use strict";
+  const readyCallbacks = []
+  let whenReady = function (fn) {
+    readyCallbacks.push(fn)
+  }
+  const executeReady = function (fn) {
+    // Prevent errors from freezing future callback execution (gh-1823)
+    // Not backwards-compatible as this does not execute sync
+    window.setTimeout(function () {
+      fn.call(document, jQuery)
+    })
+  }
 
-var readyCallbacks = [],
-	whenReady = function( fn ) {
-		readyCallbacks.push( fn );
-	},
-	executeReady = function( fn ) {
+  jQuery.fn.ready = function (fn) {
+    whenReady(fn)
+    return this
+  }
 
-		// Prevent errors from freezing future callback execution (gh-1823)
-		// Not backwards-compatible as this does not execute sync
-		window.setTimeout( function() {
-			fn.call( document, jQuery );
-		} );
-	};
+  jQuery.extend({
 
-jQuery.fn.ready = function( fn ) {
-	whenReady( fn );
-	return this;
-};
+    // Is the DOM ready to be used? Set to true once it occurs.
+    isReady: false,
 
-jQuery.extend( {
+    // A counter to track how many items to wait for before
+    // the ready event fires. See #6781
+    readyWait: 1,
 
-	// Is the DOM ready to be used? Set to true once it occurs.
-	isReady: false,
+    ready: function (wait) {
+      // Abort if there are pending holds or we're already ready
+      if (wait === true ? --jQuery.readyWait : jQuery.isReady) {
+        return
+      }
 
-	// A counter to track how many items to wait for before
-	// the ready event fires. See #6781
-	readyWait: 1,
+      // Remember that the DOM is ready
+      jQuery.isReady = true
 
-	ready: function( wait ) {
+      // If a normal DOM Ready event fired, decrement, and wait if need be
+      if (wait !== true && --jQuery.readyWait > 0) {
+        return
+      }
 
-		// Abort if there are pending holds or we're already ready
-		if ( wait === true ? --jQuery.readyWait : jQuery.isReady ) {
-			return;
-		}
+      whenReady = function (fn) {
+        readyCallbacks.push(fn)
 
-		// Remember that the DOM is ready
-		jQuery.isReady = true;
+        while (readyCallbacks.length) {
+          fn = readyCallbacks.shift()
+          if (isFunction(fn)) {
+            executeReady(fn)
+          }
+        }
+      }
 
-		// If a normal DOM Ready event fired, decrement, and wait if need be
-		if ( wait !== true && --jQuery.readyWait > 0 ) {
-			return;
-		}
+      whenReady()
+    }
+  })
 
-		whenReady = function( fn ) {
-			readyCallbacks.push( fn );
+  // Make jQuery.ready Promise consumable (gh-1778)
+  jQuery.ready.then = jQuery.fn.ready
 
-			while ( readyCallbacks.length ) {
-				fn = readyCallbacks.shift();
-				if ( isFunction( fn ) ) {
-					executeReady( fn );
-				}
-			}
-		};
-
-		whenReady();
-	}
-} );
-
-// Make jQuery.ready Promise consumable (gh-1778)
-jQuery.ready.then = jQuery.fn.ready;
-
-/**
+  /**
  * The ready event handler and self cleanup method
  */
-function completed() {
-	document.removeEventListener( "DOMContentLoaded", completed );
-	window.removeEventListener( "load", completed );
-	jQuery.ready();
-}
+  function completed () {
+    document.removeEventListener('DOMContentLoaded', completed)
+    window.removeEventListener('load', completed)
+    jQuery.ready()
+  }
 
-// Catch cases where $(document).ready() is called
-// after the browser event has already occurred.
-// Support: IE9-10 only
-// Older IE sometimes signals "interactive" too soon
-if ( document.readyState === "complete" ||
-	( document.readyState !== "loading" && !document.documentElement.doScroll ) ) {
+  // Catch cases where $(document).ready() is called
+  // after the browser event has already occurred.
+  // Support: IE9-10 only
+  // Older IE sometimes signals "interactive" too soon
+  if (document.readyState === 'complete' ||
+	(document.readyState !== 'loading' && !document.documentElement.doScroll)) {
+    // Handle it asynchronously to allow scripts the opportunity to delay ready
+    window.setTimeout(jQuery.ready)
+  } else {
+    // Use the handy event callback
+    document.addEventListener('DOMContentLoaded', completed)
 
-	// Handle it asynchronously to allow scripts the opportunity to delay ready
-	window.setTimeout( jQuery.ready );
-
-} else {
-
-	// Use the handy event callback
-	document.addEventListener( "DOMContentLoaded", completed );
-
-	// A fallback to window.onload, that will always work
-	window.addEventListener( "load", completed );
-}
-
-} );
+    // A fallback to window.onload, that will always work
+    window.addEventListener('load', completed)
+  }
+})

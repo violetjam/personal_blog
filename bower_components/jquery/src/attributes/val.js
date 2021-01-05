@@ -1,191 +1,184 @@
-define( [
-	"../core",
-	"../core/stripAndCollapse",
-	"./support",
-	"../core/nodeName",
-	"../var/isFunction",
+define([
+  '../core',
+  '../core/stripAndCollapse',
+  './support',
+  '../core/nodeName',
+  '../var/isFunction',
 
-	"../core/init"
-], function( jQuery, stripAndCollapse, support, nodeName, isFunction ) {
+  '../core/init'
+], function (jQuery, stripAndCollapse, support, nodeName, isFunction) {
+  'use strict'
 
-"use strict";
+  const rreturn = /\r/g
 
-var rreturn = /\r/g;
+  jQuery.fn.extend({
+    val: function (value) {
+      let hooks; let ret; let valueIsFunction
+      const elem = this[0]
 
-jQuery.fn.extend( {
-	val: function( value ) {
-		var hooks, ret, valueIsFunction,
-			elem = this[ 0 ];
+      if (!arguments.length) {
+        if (elem) {
+          hooks = jQuery.valHooks[elem.type] ||
+					jQuery.valHooks[elem.nodeName.toLowerCase()]
 
-		if ( !arguments.length ) {
-			if ( elem ) {
-				hooks = jQuery.valHooks[ elem.type ] ||
-					jQuery.valHooks[ elem.nodeName.toLowerCase() ];
+          if (hooks &&
+					'get' in hooks &&
+					(ret = hooks.get(elem, 'value')) !== undefined
+          ) {
+            return ret
+          }
 
-				if ( hooks &&
-					"get" in hooks &&
-					( ret = hooks.get( elem, "value" ) ) !== undefined
-				) {
-					return ret;
-				}
+          ret = elem.value
 
-				ret = elem.value;
+          // Handle most common string cases
+          if (typeof ret === 'string') {
+            return ret.replace(rreturn, '')
+          }
 
-				// Handle most common string cases
-				if ( typeof ret === "string" ) {
-					return ret.replace( rreturn, "" );
-				}
+          // Handle cases where value is null/undef or number
+          return ret == null ? '' : ret
+        }
 
-				// Handle cases where value is null/undef or number
-				return ret == null ? "" : ret;
-			}
+        return
+      }
 
-			return;
-		}
+      valueIsFunction = isFunction(value)
 
-		valueIsFunction = isFunction( value );
+      return this.each(function (i) {
+        let val
 
-		return this.each( function( i ) {
-			var val;
+        if (this.nodeType !== 1) {
+          return
+        }
 
-			if ( this.nodeType !== 1 ) {
-				return;
-			}
+        if (valueIsFunction) {
+          val = value.call(this, i, jQuery(this).val())
+        } else {
+          val = value
+        }
 
-			if ( valueIsFunction ) {
-				val = value.call( this, i, jQuery( this ).val() );
-			} else {
-				val = value;
-			}
+        // Treat null/undefined as ""; convert numbers to string
+        if (val == null) {
+          val = ''
+        } else if (typeof val === 'number') {
+          val += ''
+        } else if (Array.isArray(val)) {
+          val = jQuery.map(val, function (value) {
+            return value == null ? '' : value + ''
+          })
+        }
 
-			// Treat null/undefined as ""; convert numbers to string
-			if ( val == null ) {
-				val = "";
+        hooks = jQuery.valHooks[this.type] || jQuery.valHooks[this.nodeName.toLowerCase()]
 
-			} else if ( typeof val === "number" ) {
-				val += "";
+        // If set returns undefined, fall back to normal setting
+        if (!hooks || !('set' in hooks) || hooks.set(this, val, 'value') === undefined) {
+          this.value = val
+        }
+      })
+    }
+  })
 
-			} else if ( Array.isArray( val ) ) {
-				val = jQuery.map( val, function( value ) {
-					return value == null ? "" : value + "";
-				} );
-			}
+  jQuery.extend({
+    valHooks: {
+      option: {
+        get: function (elem) {
+          const val = jQuery.find.attr(elem, 'value')
+          return val != null
+            ? val
 
-			hooks = jQuery.valHooks[ this.type ] || jQuery.valHooks[ this.nodeName.toLowerCase() ];
+          // Support: IE <=10 - 11 only
+          // option.text throws exceptions (#14686, #14858)
+          // Strip and collapse whitespace
+          // https://html.spec.whatwg.org/#strip-and-collapse-whitespace
+            : stripAndCollapse(jQuery.text(elem))
+        }
+      },
+      select: {
+        get: function (elem) {
+          let value; let option; let i
+          const options = elem.options
+          const index = elem.selectedIndex
+          const one = elem.type === 'select-one'
+          const values = one ? null : []
+          const max = one ? index + 1 : options.length
 
-			// If set returns undefined, fall back to normal setting
-			if ( !hooks || !( "set" in hooks ) || hooks.set( this, val, "value" ) === undefined ) {
-				this.value = val;
-			}
-		} );
-	}
-} );
+          if (index < 0) {
+            i = max
+          } else {
+            i = one ? index : 0
+          }
 
-jQuery.extend( {
-	valHooks: {
-		option: {
-			get: function( elem ) {
+          // Loop through all the selected options
+          for (; i < max; i++) {
+            option = options[i]
 
-				var val = jQuery.find.attr( elem, "value" );
-				return val != null ?
-					val :
-
-					// Support: IE <=10 - 11 only
-					// option.text throws exceptions (#14686, #14858)
-					// Strip and collapse whitespace
-					// https://html.spec.whatwg.org/#strip-and-collapse-whitespace
-					stripAndCollapse( jQuery.text( elem ) );
-			}
-		},
-		select: {
-			get: function( elem ) {
-				var value, option, i,
-					options = elem.options,
-					index = elem.selectedIndex,
-					one = elem.type === "select-one",
-					values = one ? null : [],
-					max = one ? index + 1 : options.length;
-
-				if ( index < 0 ) {
-					i = max;
-
-				} else {
-					i = one ? index : 0;
-				}
-
-				// Loop through all the selected options
-				for ( ; i < max; i++ ) {
-					option = options[ i ];
-
-					// Support: IE <=9 only
-					// IE8-9 doesn't update selected after form reset (#2551)
-					if ( ( option.selected || i === index ) &&
+            // Support: IE <=9 only
+            // IE8-9 doesn't update selected after form reset (#2551)
+            if ((option.selected || i === index) &&
 
 							// Don't return options that are disabled or in a disabled optgroup
 							!option.disabled &&
-							( !option.parentNode.disabled ||
-								!nodeName( option.parentNode, "optgroup" ) ) ) {
+							(!option.parentNode.disabled ||
+								!nodeName(option.parentNode, 'optgroup'))) {
+              // Get the specific value for the option
+              value = jQuery(option).val()
 
-						// Get the specific value for the option
-						value = jQuery( option ).val();
+              // We don't need an array for one selects
+              if (one) {
+                return value
+              }
 
-						// We don't need an array for one selects
-						if ( one ) {
-							return value;
-						}
+              // Multi-Selects return an array
+              values.push(value)
+            }
+          }
 
-						// Multi-Selects return an array
-						values.push( value );
-					}
-				}
+          return values
+        },
 
-				return values;
-			},
+        set: function (elem, value) {
+          let optionSet; let option
+          const options = elem.options
+          const values = jQuery.makeArray(value)
+          let i = options.length
 
-			set: function( elem, value ) {
-				var optionSet, option,
-					options = elem.options,
-					values = jQuery.makeArray( value ),
-					i = options.length;
+          while (i--) {
+            option = options[i]
 
-				while ( i-- ) {
-					option = options[ i ];
+            /* eslint-disable no-cond-assign */
 
-					/* eslint-disable no-cond-assign */
+            if (option.selected =
+						jQuery.inArray(jQuery.valHooks.option.get(option), values) > -1
+            ) {
+              optionSet = true
+            }
 
-					if ( option.selected =
-						jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1
-					) {
-						optionSet = true;
-					}
+            /* eslint-enable no-cond-assign */
+          }
 
-					/* eslint-enable no-cond-assign */
-				}
+          // Force browsers to behave consistently when non-matching value is set
+          if (!optionSet) {
+            elem.selectedIndex = -1
+          }
+          return values
+        }
+      }
+    }
+  })
 
-				// Force browsers to behave consistently when non-matching value is set
-				if ( !optionSet ) {
-					elem.selectedIndex = -1;
-				}
-				return values;
-			}
-		}
-	}
-} );
-
-// Radios and checkboxes getter/setter
-jQuery.each( [ "radio", "checkbox" ], function() {
-	jQuery.valHooks[ this ] = {
-		set: function( elem, value ) {
-			if ( Array.isArray( value ) ) {
-				return ( elem.checked = jQuery.inArray( jQuery( elem ).val(), value ) > -1 );
-			}
-		}
-	};
-	if ( !support.checkOn ) {
-		jQuery.valHooks[ this ].get = function( elem ) {
-			return elem.getAttribute( "value" ) === null ? "on" : elem.value;
-		};
-	}
-} );
-
-} );
+  // Radios and checkboxes getter/setter
+  jQuery.each(['radio', 'checkbox'], function () {
+    jQuery.valHooks[this] = {
+      set: function (elem, value) {
+        if (Array.isArray(value)) {
+          return (elem.checked = jQuery.inArray(jQuery(elem).val(), value) > -1)
+        }
+      }
+    }
+    if (!support.checkOn) {
+      jQuery.valHooks[this].get = function (elem) {
+        return elem.getAttribute('value') === null ? 'on' : elem.value
+      }
+    }
+  })
+})

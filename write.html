@@ -86,13 +86,11 @@
                         }
 					}
 					function editTitle(o){
-                        
                             $(o).replaceWith("<input type='text' id='title' placeholder='请输入标题（不要超过30字）' onblur='updateTitle(event);'>");
                             $("#title").focus();
                         
 					}
 					function editBody(o){
-                        
                             $(o).replaceWith("<textarea name='body' id='body' cols='30' rows='10' placeholder='正文' onblur='updateBody(event);'></textarea>");
                             $("#body").focus();
                         

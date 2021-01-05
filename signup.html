@@ -81,7 +81,11 @@
                 console.log("success");
                 clear();
                 setCookie("username",user.username, 7);
-                window.location.href='log.html';
+                errortip = "注册成功！正在登录...";
+                $("#errortip").text(errortip);
+                setTimeout(() => {
+                    window.location.href = "log.html";
+                }, 3000);
                 return;
               }
             }

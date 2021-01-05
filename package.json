@@ -22,7 +22,8 @@
     "gulp-notify": "^3.2.0",
     "gulp-uglify": "^3.0.2",
     "main-bower-files": "^2.5.0",
-    "readable-stream": "^2.3.7"
+    "readable-stream": "^2.3.7",
+    "standard": "^16.0.3"
   },
   "dependencies": {
     "ansi-colors": "^1.1.0",

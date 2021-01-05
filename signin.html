@@ -82,7 +82,11 @@
                         clear();
                         k = 0;
                         setCookie("username",arr[e].username, 7);
-                        window.location.href = "log.html";
+                        errortip = "正在登陆...";
+                        $("#errortip").text(errortip);
+                        setTimeout(() => {
+                          window.location.href = "log.html";
+                        }, 3000);
                         return;
                       } else {
                         errortip = "密码错误";
